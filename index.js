@@ -8,6 +8,7 @@ const app = express();
 
 app.get("", (req, res) =>{
     res.send(`
+        <link rel="stylesheet" href="/styles.css">
         <h1> Bem Vindo ao Rent-a-Cat</h1>
         <nav>
             <a href="/"> Home </a>
@@ -19,6 +20,7 @@ app.get("", (req, res) =>{
 
 app.get("/gatos", (req, res) =>{
     res.send(`
+        <link rel="stylesheet" href="/styles.css">
         <h1> Gatos </h1>
         <nav>
             <a href="/"> Home </a>
@@ -34,6 +36,7 @@ app.get("/gatos", (req, res) =>{
 
 app.get("/sobre", (req, res) =>{
     res.send(`
+        <link rel="stylesheet" href="/styles.css">
         <h1> Sobre </h1>
         <nav>
             <a href="/"> Home </a>
@@ -45,6 +48,19 @@ app.get("/sobre", (req, res) =>{
         </p>
     `);
 });
+
+app.get("/styles.css", (req, res) => {
+    let cores = ["blue", "red", "yellow"];
+    let numero = Math.floor(Math.random()*3);
+
+    let cor = cores[numero];
+    res.send(`
+        body{
+            color:${cor};
+        }
+    `)
+});
+
 
 app.listen(3000, () => { // 3000 é porta para acessar o meu computador, que virou um servidor
     console.log("Servidor Inicializado");
