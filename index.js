@@ -5,48 +5,18 @@
 
 const express = require('express');
 const app = express();
+app.set("view engine", "ejs");
 
 app.get("", (req, res) =>{
-    res.send(`
-        <link rel="stylesheet" href="/styles.css">
-        <h1> Bem Vindo ao Rent-a-Cat</h1>
-        <nav>
-            <a href="/"> Home </a>
-            <a href="/gatos"> Gatos </a>
-            <a href="/sobre"> Sobre </a>
-        </nav>
-    `);
+    res.render("index");
 });
 
 app.get("/gatos", (req, res) =>{
-    res.send(`
-        <link rel="stylesheet" href="/styles.css">
-        <h1> Gatos </h1>
-        <nav>
-            <a href="/"> Home </a>
-            <a href="/gatos"> Gatos </a>
-            <a href="/sobre"> Sobre </a>
-        </nav>
-        <ul>
-            <li>Siamês</li>
-            <li>Persa</li>
-        </ul>
-    `);
+    res.render("gatos");
 });
 
 app.get("/sobre", (req, res) =>{
-    res.send(`
-        <link rel="stylesheet" href="/styles.css">
-        <h1> Sobre </h1>
-        <nav>
-            <a href="/"> Home </a>
-            <a href="/gatos"> Gatos </a>
-            <a href="/sobre"> Sobre </a>
-        </nav>
-        <p>
-            Milk the cow flee in terror at cucumber discovered on floor. Cough hairball on conveniently placed pants spend all night ensuring people don't sleep sleep all day. Asdflkjaertvlkjasntvkjn (sits on keyboard) meow all night having their mate disturbing sleeping humans swat turds around the house for love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) and reward the chosen human with a slow blink rub face on everything, and thug cat. 
-        </p>
-    `);
+    res.render("sobre");
 });
 
 app.get("/styles.css", (req, res) => {
