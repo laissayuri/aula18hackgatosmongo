@@ -3,32 +3,25 @@
 
 // }
 
+//usar nodemon index.js pra o servidor ja atualizar as mudanças sem ter que ficar inicializando toda hora
+
 const express = require('express');
+const gatos = require("./data/gatos.json");
+
 const app = express();
 app.set("view engine", "ejs");
+app.use("/assets", express.static("static")); //css e imagens
 
 app.get("", (req, res) =>{ //request e response
     res.render("index"); // se for colocar com o html direto: res.send(`codigo do html`);
 });
 
 app.get("/gatos", (req, res) =>{
-    res.render("gatos");
+    res.render("gatos", {"gatos":gatos}); //fala que tem que passar json no template
 });
 
 app.get("/sobre", (req, res) =>{
     res.render("sobre");
-});
-
-app.get("/styles.css", (req, res) => {
-    let cores = ["blue", "red", "yellow"];
-    let numero = Math.floor(Math.random()*3);
-
-    let cor = cores[numero];
-    res.send(`
-        body{
-            color:${cor};
-        }
-    `)
 });
 
 

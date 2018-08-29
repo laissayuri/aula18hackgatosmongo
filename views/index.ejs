@@ -5,8 +5,25 @@
 
 <body>
 
-    <%-include("shared/header")%>    
-    <h1> Bem Vindo ao Rent-a-Cat</h1>
+    <%-include("shared/header")%> 
+    <section class="home">
+        <div class="banner">
+            <h2> Bem Vindo ao Rent-a-Cat </h2>
+            <img src="assets/banner.jpg" alt="" class="banner">
+        </div>
+
+        <form action="">
+            <h2>Entre em contato:</h2>
+            <input type="text" placeholder="nome">
+            <input type="text" placeholder="email">
+            <textarea rows="10" placeholder="mensagem"></textarea>
+                
+            <button>Enviar</button>
+        </form>
+            
+    </section>  
+
+    <%-include("shared/footer")%> 
     
 </body>
 </html>

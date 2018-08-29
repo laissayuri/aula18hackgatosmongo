@@ -1,0 +1,26 @@
+[
+     {
+          "nome": "Fofinho",
+          "img": "/assets/gato1.jpg"
+     },
+     {
+          "nome": "Fofão",
+          "img": "/assets/gato2.jpg"
+     },
+     {
+          "nome": "Metade",
+          "img": "/assets/gato3.jpg"
+     },
+     {
+          "nome": "Fofo",
+          "img": "/assets/gato4.jpg"
+     },
+     {
+          "nome": "Nuvem",
+          "img": "/assets/gato5.jpg"
+     },
+     {
+          "nome": "Fofucho",
+          "img": "/assets/gato6.jpg"
+     }
+]
