@@ -27,18 +27,16 @@ app.post("", (req, res) => {
         console.log(erro);
         res.render("obrigado");
     });
-    
-    // let string = `
-    //     Nome: ${req.body.nome}\n Email: ${req.body.email} \n Mensagem: ${req.body.mensagem} \n
-    // `;
+});
 
-    // fs.writeFile("mensagem.txt", string, {flag: "a"}, (err) =>{
-    //     res.render("obrigado");
-    // });
+app.get('/admin/mensagens', (req, res) => {
+    req.db.collection('mensagens').find().toArray((erro, dados) => { //acessa acolecao mensagens, pega os arquivos e transforma em array
+        res.render('admin-mensagens', {'mensagens': dados}); //tem a variavel mensagens (vai ser usado no for do admin-mensagens.ejs) que vai receber os dados
+    });
 });
 
 app.get("/gatos", (req, res) =>{
-    res.render("gatos", {"gatos":gatos}); //fala que tem que passar json no template ("template":json)
+    res.render("gatos", {"gatos":gatos});
 });
 
 app.get("/sobre", (req, res) =>{
