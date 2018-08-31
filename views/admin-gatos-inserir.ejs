@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%-include("shared/head")%>
+
+<body>
+
+    <section>
+        <h2> Gatos </h2>
+
+        <h3><%= mensagem %></h3>
+
+        <a href="/admin/gatos"> Ir para página admin gatos </a>
+
+        <form method="POST">
+            <label> Nome </label>
+            <input type="text" name="nome">
+
+            <label> Imagem </label>
+            <input type="text" name="img">
+
+            <button> Enviar </button>
+        </form>
+    </section>
+
+</body>
+</html>

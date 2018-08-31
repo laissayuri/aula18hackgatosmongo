@@ -14,22 +14,11 @@
         <div class="container">
             <% for(let gato of gatos) { %>
                 <div>
-                    <img src="<%= gato.img %>" alt="">
+                    <img src="/assets/<%= gato.img %>" alt="">
                     <h3><%= gato.nome %></h3>
                 </div>
             <% } %>
-            <!-- <div>
-                <img src="<%= gatos[0].img %>" alt="">
-                <h3><%= gatos[0].nome %></h3>
-            </div>
-            <div>
-                <img src="<%= gatos[1].img %>" alt="">
-                <h3><%= gatos[1].nome %></h3>
-            </div>
-            <div>
-                <img src="<%= gatos[2].img %>" alt="">
-                <h3><%= gatos[2].nome %></h3>
-            </div>  -->
+
         </div>
         
     </section>

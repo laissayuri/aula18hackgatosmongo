@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('shared/head') %>
+<body>
+    <section>
+        <h2>Gatos</h2>
+
+        <a href="/admin/gatos/inserir">Inserir Gato</a>
+        
+        <% for(let gato of gatos){ %>
+            <div>
+                <p>Nome: <%= gato.nome %></p>
+                <img src="/assets/<%= gato.img %>">
+
+                <form method="POST" action="/admin/gatos/<%= gato._id %>">
+                    <button>Deletar</button>
+                </form>
+                
+                <hr>
+            </div>
+        <% } %>
+    
+    </section>
+</body>
+</html>
